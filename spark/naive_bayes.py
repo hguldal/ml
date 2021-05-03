@@ -41,6 +41,7 @@ data = sqlContext.read.option("delimiter", ",").csv(dataKonum, header=True, infe
 # Verisetini yüzdelik değerlerine göre 2 bölüme ayır 0: eğitim , 1:test
 (egitimData, testData) = data.randomSplit([egitimDataYuzdesi, testDataYuzdesi], seed = 1234)
 
+
 # Verisetinde sınıf etiketinin adı ve temsil adı
 sinifEtiketi = StringIndexer(inputCol=dataSinifAdi, outputCol="sinif")
 
